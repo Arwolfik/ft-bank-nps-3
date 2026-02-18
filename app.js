@@ -131,7 +131,8 @@
     }
 
     const answers = {};
-    const required = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"];
+    const required = Array.from(form.querySelectorAll(".scale[data-name]"))
+      .map((el) => el.dataset.name);
     let ok = true;
 
     for (const q of required) {
